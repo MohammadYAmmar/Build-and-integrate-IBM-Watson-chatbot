@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<!-- UI control panel to IoT for Robots with IBM Watson chatbot  -->
+<!-- Task when intren in Smart methods  -->
+
+<html>
+
+<head>
+    <title>Mohammad Y A IoT Control</title>
+    <main>control panel for Robots</main>
+
+<!-- <link rel="stylesheet" href="styles.css">  to link css -->
+
+<!-- to link IBM watson -->
+
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "5c09eefd-c55b-45c0-8d12-bbf278a9cc53", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "6f0e44ad-8a89-4cdb-b6ac-b1c7b946f1a2", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</head>
+
+<body>
+    <div class="container">
+
+<h1>
+    <button class="button_normal" type="button">Forwards </button>
+</h1>
+
+<h2>
+    <button class="button_normal" type="button">Left </button>
+    <button class="button_red" type="button">STOP </button>
+    <button class="button_normal"type="button"> Right </button>
+</h2>
+
+<h3>
+    <button class="button_normal" type="button">Backwards </button>
+
+</h3>
+
+</div>
+
+</body>
+
+</html>
+
+<style>
+body {
+    background-color: lightskyblue;
+  }
+
+  main{
+
+
+
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    color: maroon;
+    font-size: 33px; 
+    cursor: -webkit-grab;   
+    width: 100%;
+    max-width: 1920px;
+    min-width: 480px;
+    height: 200px;
+    margin-left: -8px;
+    text-align: center;
+    clear: both;
+    display: inline-block; /*Important */
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    padding: 100px 0 0;
+
+}
+
+.button_normal{
+    padding: 7px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position:inherit;
+
+
+}
+
+.button_red{
+    background-color: red;
+    padding: 7px 50px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 12px;
+    cursor: pointer;
+    position:inherit;
+
+    
+}
+
+/* New container to match the dimensions of the phone or any other screen */
+.container{
+    width: 100%;
+    max-width: 1920px;
+    min-width: 480px;
+    height: 200px;
+    margin-left: -8px;
+    overflow: hidden;
+    text-align: center;
+}
+</style>
+
