@@ -1,0 +1,192 @@
+{
+  "intents": [
+    {
+      "intent": "Robot-control",
+      "examples": [
+        {
+          "text": "right"
+        },
+        {
+          "text": "forward"
+        },
+        {
+          "text": "backward"
+        },
+        {
+          "text": "left"
+        }
+      ],
+      "description": "Robot walking path"
+    },
+    {
+      "intent": "chat-tech",
+      "examples": [
+        {
+          "text": "What a new technique"
+        },
+        {
+          "text": "How are you doing?"
+        }
+      ],
+      "description": "To talk about technology and general things"
+    },
+    {
+      "intent": "greetings",
+      "examples": [
+        {
+          "text": "Gets started"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "welcome"
+        }
+      ],
+      "description": "Greet users upon entering"
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Robot control",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Well, please Watch out attention to it"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Robot-control",
+      "dialog_node": "node_4_1596116531811",
+      "previous_sibling": "node_8_1596116463747"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1596116531811",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "hello this is MYA chatbot powered by IBM Watson, How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#greetings",
+      "dialog_node": "node_9_1596116365059",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "chat",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It's okay with the end of summer training for Smart Methods \nIt is the last mission in it and we will miss it"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#chat-tech",
+      "dialog_node": "node_8_1596116463747",
+      "previous_sibling": "node_9_1596116365059"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "MYA chatBot",
+  "language": "en",
+  "description": ""
+}
